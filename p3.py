@@ -1,5 +1,7 @@
 # The prime factors of 13195 are 5, 7, 13 and 29.
 # What is the largest prime factor of the number 600851475143 ?
+import time
+start = time.time()
 prime_list = []
 num = int(raw_input("number for prime factorization:"))
 
@@ -15,3 +17,5 @@ def prime_factor(x):
     return prime_list
 
 print prime_factor(num)
+end = time.time()
+print end - start
