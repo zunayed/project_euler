@@ -4,33 +4,21 @@
 
 // Find the sum of all the multiples of 3 or 5 below 1000.
 
-
-// `for` is Go's only looping construct. Here are
-// three basic types of `for` loops.
-
 package main
 
 import "fmt"
 
-func sum_of_multiples_under(number int) int {
-    var sum int = 0
-
-    i := 1
-    for i < number {
-
-        if i%3 == 0 {
-            sum = sum + i
-        } else if i%5 == 0 {
-            sum = sum + i
-        }
-
-        i = i + 1
-    }
-
-    return sum
+func is_multiple(i int) bool {
+    return i % 5 == 0 || i % 3 == 0;
 }
 
+
 func main() {
-    res := sum_of_multiples_under(1000)
-    fmt.Println(res)
+    sum := 0
+    for i := 0; i < 1000; i++ {
+        if is_multiple(i) {
+            sum += i
+        }
+    }
+    fmt.Printf("Sum: %v\n", sum)
 }
